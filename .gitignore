@@ -1,6 +1,5 @@
 .venv/
 .idea/
 __pycache__/
-# Ignorar arquivos específicos de teste, exceto o teste.2.py
 tst_jogo.py
 main.py

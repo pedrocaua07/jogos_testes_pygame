@@ -20,7 +20,7 @@ y_azul = randint(40, 440)
 # --- NOVO: Variável para controlar o tempo do Spawn ---
 tempo_ultimo_spawn = pygame.time.get_ticks()
 tempo_espera = 1500  # Tempo em milissegundos (2000 ms = 2 segundos)
-lista_parabens =['Isso Aí!', 'Parabéns!', 'COLISÃO!', ';)']
+lista_parabens =['Boa Manu!!', 'Parabéns!', 'COLISÃO!', ';)']
 parabens = ''
 pygame.display.set_caption("Pygame")
 tela = pygame.display.set_mode((larg, alti))
@@ -55,6 +55,15 @@ while True:
         y -= 10
     if teclas[pygame.K_DOWN] or teclas[pygame.K_s]:
         y += 10
+        # --- NOVO: Limitador para o jogador não sair da tela ---
+    if x < 0:
+        x = 0
+    if x > larg - 50:  # 50 é a largura do quadrado vermelho
+        x = larg - 50
+    if y < 0:
+        y = 0
+    if y > alti - 50:  # 50 é a altura do quadrado vermelho
+        y = alti - 50
         # --- NOVO: Lógica do Cronômetro para mudar o azul de lugar ---
     tempo_atual = pygame.time.get_ticks()
         # Se a diferença do tempo atual para o último spawn for maior que 2 segundos:
